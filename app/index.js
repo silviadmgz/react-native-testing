@@ -9,6 +9,7 @@ import {
 	Alert,
 	Pressable,
 } from 'react-native';
+import { Link } from 'expo-router';
 
 export default function Index() {
 	const [username, setUsername] = useState('');
@@ -38,11 +39,17 @@ export default function Index() {
 				</Text>
 			</View>
 
-			<Pressable
-				onPress={() => Alert.alert('Logging in')}
-				style={styles.loginButton}
-			>
-				<Text style={{ color: 'white', fontSize: 16, padding: 10 }}>LOGIN</Text>
+			<Pressable style={styles.loginButton}>
+				<Link href='/home' style={{ padding: 10, alignSelf: 'center' }}>
+					<Text
+						style={{
+							color: 'white',
+							fontSize: 16,
+						}}
+					>
+						LOGIN
+					</Text>
+				</Link>
 			</Pressable>
 		</View>
 	);
@@ -72,8 +79,7 @@ const styles = StyleSheet.create({
 	},
 	loginButton: {
 		backgroundColor: 'black',
-		width: 200,
-		alignItems: 'center',
+		width: 100,
 		marginTop: 30,
 	},
 });
