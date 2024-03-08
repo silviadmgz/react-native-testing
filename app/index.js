@@ -10,7 +10,7 @@ import {
 	Pressable,
 } from 'react-native';
 
-export default function App() {
+export default function Index() {
 	const [username, setUsername] = useState('');
 
 	return (
